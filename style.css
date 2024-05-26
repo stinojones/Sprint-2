@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* this makes the display like a flexible box to put the items in */
+  justify-content: center;
+  /* center items horizontally */
+  flex-direction: column;
+  /* Arrange items vertically */
+  align-items: center;
+  /* center items vertically */
+  height: 100vh;
+  /* you need this as well to get it centered vertically I guess */
+  background-color: rgb(254, 56, 56);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  /* center items horizontally */
+}
+
+.hello-world {
+  display: flex;
+  justify-content: center;
+  color: var(--clear-light) ;
+}
+
+:root {
+  --clear-accent: #33c0d9;
+  /* define clear accent color for buttons */
+  --clear-rgba: #e6faf8;
+  /* define clear rgba color for buttons */
+  --clear-light: #ffffff;
+}
+
+.button {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  color: var(--clear-accent);
+  border: 5px solid var(--clear-accent);
+  /* creates the stroke */
+  border-radius: 15px;
+  background-color: var(--clear-rgba);
+  margin-right: 10px;
+  /* rounds the edges of the border/stroke */
+
+  /* transition-property: transform; */
+  /* which transition property you will use */
+  /* transition-duration: 0.3s; */
+  /* how long the transition should take to complete */
+  /* transition-timing-function: ease; */
+  /* acceleration curve for the transition */
+  /* transition-delay: 0s ; */
+  /* defines delay before transition takes effect  */
+
+  transition: transform 0.3s ease 0s;
+  /* this is just a simplier version of all the comments above haha, easier way is line 64 */
+}
+
+.button:hover {
+  transform: translateY(-7px);
+  /* makes the buttons go up a little bit when hovered */
+  background-color: var();
+}
+
+.button-color {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  color: var(--clear-accent);
+  border: 5px solid var(--clear-accent);
+  /* creates the stroke */
+  border-radius: 15px;
+  background-color: var(--clear-rgba);
+  /* rounds the edges of the border/stroke */
+  transition: all 0.3s;
+  /* easier way to right this out */
+}
+
+.button-color:hover {
+  transform: translateY(-7px);
+  /* makes the buttons go up a little bit when hovered */
+  background-color: var(--clear-accent);
+  color: var(--clear-light);
+}
+
+@keyframes slideFromLeft {
+  /* beginning animation */
+  from {
+    transform: translateX(-800px);
+  }
+
+  /* end animation */
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromAbove {
+  /* beginning animation */
+  from {
+    transform: translateY(-800px);
+  }
+
+  /* end animation */
+  to {
+    transform: translateY(0);
+  }
+}
+
+.heading-1 {
+  margin-bottom: 40px;
+  animation-name: slideFromLeft;
+  /* animation name defined from above and connected */
+  animation-duration: 2s;
+  /* sets time for animation to complete one lap */
+  animation-timing-function: ease-in;
+  /* how the animation will come in/be performed */
+  animation-delay: 0s;
+  /* how long the delay will be before animation happens, 0s, happens right as 
+  the page loads*/
+  animation-iteration-count: 1;
+  /* how many times the animation will happen before stopping, defualt is 1 */
+  animation-direction: normal; /*default value is normal
+  /* you can change this if you want it to go to backwards (reverse) replace */
+  animation-fill-mode: none;
+  /* this was tough to understand but may learn it later */
+}
+
+.heading-simple {
+  margin-bottom: 40px;
+  animation: slideFromAbove 3.5s ease-in;
+  /* everything but simpler and some things are already at defualt */
+}
